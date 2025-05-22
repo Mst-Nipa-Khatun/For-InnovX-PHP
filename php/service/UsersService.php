@@ -1,0 +1,39 @@
+<?php
+
+namespace service;
+use connection\Database;
+
+class UsersService
+{
+    private $conn;
+
+    public function __construct()
+    {
+        $this->conn = Database::getInstance()->getConnection();
+    }
+
+
+    public function createUser($userName, $email, $password,$education,$age,$picture)
+    {
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $sql = "INSERT INTO Users (userName,email,password,education,age,picture) VALUES (:userName, :email, :password , :education, :age, :picture)";
+        $executableQuery = $this->conn->prepare($sql);
+        $executableQuery->bindParam(':firstName', $userName);
+        $executableQuery->bindParam(':email', $email);
+        $executableQuery->bindParam(':password', $hashedPassword);
+        $executableQuery->bindParam(':education', $education);
+        $executableQuery->bindParam(':age', $age);
+        $executableQuery->bindParam(':picture', $picture);
+        return $executableQuery->execute();
+    }
+
+    public function getAllUsers()
+    {
+        $sql = "SELECT userName,email,password,education,age,picture FROM Users";
+        $executableQuery = $this->conn->query($sql);
+        return $executableQuery->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+}
+
