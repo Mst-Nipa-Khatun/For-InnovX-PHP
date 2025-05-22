@@ -19,7 +19,7 @@ class LoginService
 
     public function login($userName, $password)
     {
-        $sql = "SELECT userName, password FROM Users WHERE userName = :userName AND status = 1";
+        $sql = "SELECT id, userName, password FROM Users WHERE userName = :userName AND status = 1";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':userName', $userName);
         $stmt->execute();
@@ -31,6 +31,7 @@ class LoginService
                 "success" => true,
                 "message" => "Login successful",
                 "user" => [
+                    "id" => $user['id'],
                     "userName" => $user['userName']
                 ]
             ];

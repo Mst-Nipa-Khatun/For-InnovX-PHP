@@ -45,9 +45,11 @@
         </div>
     </div>
 </div>
-<form id="dashBoard" action="dashboard.html" method="get">
 
+<form id="dashBoard" action="dashboard.php" method="get">
+    <input type="hidden" value="" name="userId" id="userId">
 </form>
+
 </body>
 </html>
 
@@ -80,6 +82,7 @@
                         if (response.success) {
                             toastr.success(response.message);
                             setTimeout(function () {
+                                $("#userId").val(response.user.id)
                                 $("#dashBoard").submit();
                             }, 1000)
                         } else {

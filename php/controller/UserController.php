@@ -6,7 +6,7 @@ use service\UsersService;
 header("Content-Type: application/json");
 
 $userService = new UsersService();
-$method = $_SERVER['REQUEST_METHOD']; //GET,POST,PUT,DELETE,PATCH
+$method = $_SERVER['REQUEST_METHOD'];
 
 switch ($method) {
     case 'POST':

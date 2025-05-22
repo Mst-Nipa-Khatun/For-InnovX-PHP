@@ -1,7 +1,10 @@
 <?php
 
 namespace service;
+
 use connection\Database;
+use PDO;
+
 require_once __DIR__ . '/../connection/Database.php';
 
 class UsersService
@@ -14,7 +17,7 @@ class UsersService
     }
 
 
-    public function createUser($userName, $email, $password,$education,$age,$picture)
+    public function createUser($userName, $email, $password, $education, $age, $picture)
     {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $sql = "INSERT INTO Users (userName,email,password,education,age,picture,status) VALUES (:userName, :email, :password , :education, :age, :picture,1)";
@@ -34,6 +37,18 @@ class UsersService
         $executableQuery = $this->conn->query($sql);
         return $executableQuery->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
+    public function findByUserId($userId)
+    {
+        $sql = "SELECT userName, email, password, education, age, picture FROM Users WHERE id = :userId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
 
 
 }
