@@ -23,7 +23,7 @@ switch ($method) {
 
             $uploadDir = __DIR__ . '/../uploads/';
             if (!file_exists($uploadDir)) {
-                mkdir($uploadDir, 0777, true);
+                mkdir($uploadDir);
             }
 
             $targetPath = $uploadDir . basename($file['name']);
