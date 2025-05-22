@@ -26,9 +26,11 @@ switch ($method) {
                 mkdir($uploadDir);
             }
 
-            $targetPath = $uploadDir . basename($file['name']);
+            $fileName = time() . "_" . $file['name'];
+            $targetPath = $uploadDir . basename($fileName);
             if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                $result = $userService->createUser($userName, $email, $password, $education, $age, $file['name']);
+                $savedDir = "/For-Innovx/php/uploads/" . $fileName;
+                $result = $userService->createUser($userName, $email, $password, $education, $age, $savedDir);
                 echo json_encode([
                     "success" => $result,
                     "message" => $result ? "Successfully created user!" : "Failed to create user!"

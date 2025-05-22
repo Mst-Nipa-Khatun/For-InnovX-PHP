@@ -32,7 +32,10 @@ if ($userId !== null && is_numeric($userId)) {
                     <?php if ($userData): ?>
                         <div class="row">
                             <div class="col-md-4 text-center">
-<!--                                <img src="--><?php //= htmlspecialchars($userData['picture']) ?><!--" alt="Profile Picture" class="img-fluid rounded-circle mb-3" style="max-width: 150px;">-->
+                                <img src="<?= htmlspecialchars($userData['picture']) ?>"
+                                     alt="Profile Picture"
+                                     class="img-fluid rounded-circle mb-3"
+                                     style="max-width: 150px;">
                             </div>
                             <div class="col-md-8">
                                 <h4><?= htmlspecialchars($userData['userName']) ?></h4>
