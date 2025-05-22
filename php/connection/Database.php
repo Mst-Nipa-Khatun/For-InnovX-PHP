@@ -2,6 +2,10 @@
 
 namespace connection;
 
+use Exception;
+use PDO;
+use PDOException;
+
 class Database
 {
     private static $instance = null;

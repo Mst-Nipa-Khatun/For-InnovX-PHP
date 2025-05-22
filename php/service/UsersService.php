@@ -2,6 +2,7 @@
 
 namespace service;
 use connection\Database;
+require_once __DIR__ . '/../connection/Database.php';
 
 class UsersService
 {
@@ -18,7 +19,7 @@ class UsersService
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $sql = "INSERT INTO Users (userName,email,password,education,age,picture) VALUES (:userName, :email, :password , :education, :age, :picture)";
         $executableQuery = $this->conn->prepare($sql);
-        $executableQuery->bindParam(':firstName', $userName);
+        $executableQuery->bindParam(':userName', $userName);
         $executableQuery->bindParam(':email', $email);
         $executableQuery->bindParam(':password', $hashedPassword);
         $executableQuery->bindParam(':education', $education);
