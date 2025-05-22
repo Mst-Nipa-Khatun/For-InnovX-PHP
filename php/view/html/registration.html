@@ -151,52 +151,6 @@
         });
 
     });
-    // $(document).ready(function () {
-    //     $('#submitBtn').click(function (e) {
-    //         e.preventDefault();
-    //
-    //         if (!registeredValidation()) return;
-    //
-    //         let userName = $('#userName').val().trim();
-    //         let email = $('#email').val().trim();
-    //         let password = $('#password').val().trim();
-    //         let education = $('#edu').val().trim();
-    //         let age = $('#age').val().trim();
-    //         let picture = document.getElementById('picture');
-    //         let file = picture.files[0];
-    //
-    //         let form = new FormData();
-    //         form.append("file", file);
-    //         form.append("userName", userName);
-    //         form.append("email", email);
-    //         form.append("password", password);
-    //         form.append("education", education);
-    //         form.append("age", age);
-    //
-    //         $.ajax({
-    //             url: 'http://localhost:80/For-Innovx/php/controller/UserController.php',
-    //             type: "POST",
-    //             headers: {
-    //                 'Access-Control-Allow-Origin': '*',
-    //             },
-    //             data: form,
-    //             processData: false,
-    //             contentType: false,
-    //             success: function (response) {
-    //                 console.log(response);
-    //                 if (response.success) {
-    //                     toastr.success(response.message);
-    //                 } else {
-    //                     toastr.warning(response.message);
-    //                 }
-    //             },
-    //             error: function (xhr, status, error) {
-    //                 console.error(error);
-    //                 toastr.error("Error: " + error);
-    //             }
-    //         });
-    //     });
-    // });
 
     function registeredValidation() {
         let userName = $('#userName').val().trim();
