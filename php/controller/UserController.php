@@ -10,24 +10,34 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 switch ($method) {
     case 'POST':
-        $requestBody = file_get_contents("php://input");
-        /**
-         * Here [true] means convert to accessible PHP array
-         * Here [false] means convert to  accessible PHP object.
-         */
-        $data = json_decode($requestBody, true);
+        if (
+            isset($_POST['userName']) && isset($_POST['email']) && isset($_POST['password']) &&
+            isset($_POST['education']) && isset($_POST['age']) && isset($_FILES['file'])
+        ) {
+            $userName = $_POST['userName'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $education = $_POST['education'];
+            $age = $_POST['age'];
+            $file = $_FILES['file'];
 
+            $uploadDir = __DIR__ . '/../uploads/';
+            if (!file_exists($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
 
-        if (isset($data['userName']) && isset($data['email']) && isset($data['password']) && isset($data['education']) && isset($data['age']) && isset($data['picture'])) {
-            $result = $userService->createUser($data['userName'], $data['email'], $data['password'], $data['education'], $data['age'], $data['picture']);
-            echo json_encode(
-                [
+            $targetPath = $uploadDir . basename($file['name']);
+            if (move_uploaded_file($file['tmp_name'], $targetPath)) {
+                $result = $userService->createUser($userName, $email, $password, $education, $age, $file['name']);
+                echo json_encode([
                     "success" => $result,
                     "message" => $result ? "Successfully created user!" : "Failed to create user!"
-                ]
-            );
+                ]);
+            } else {
+                echo json_encode(["success" => false, "message" => "Failed to upload file"]);
+            }
         } else {
-            echo json_encode(["error" => "Missing parameters"]);
+            echo json_encode(["success" => false, "message" => "Missing parameters or file"]);
         }
         break;
     case 'GET':
