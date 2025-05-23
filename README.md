@@ -1,5 +1,8 @@
 # For-Innovx
-## PHP BrainStorm ##
+## Task 1:
+
+### PHP BrainStorm 
+
 
 PHP, standing for "PHP: Hypertext Preprocessor," is a widely-used, open-source server-side scripting language, particularly well-suited for web development. It's designed to generate dynamic web page content and interact with databases. PHP can also be used for command-line scripting and desktop applications. 
 
@@ -181,3 +184,120 @@ PHP Script (submit.php):
                  }
              $conn->close();
           ?>
+
+<hr>
+
+## Task 2:
+### About CSS:
+
+#### Opacity:
+Opacity is a CSS property that controls the **transparency** of an HTML element.
+
+It takes values from 0 to 1.
+
+        i. 1 means fully visible.(100%)
+        ii.0 means fully transparent (invisible).(0%)
+**Example**
+
+``` 
+div {
+  opacity: 0.5;
+}
+ ```
+In this code, the div will be 50% transparent.
+
+Complete use:
+```json
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  opacity: 0.5;
+}
+</style>
+</head>
+<body>
+
+<h1>Image Transparency</h1>
+<p>The opacity property specifies the transparency of an element. The lower the value, the more transparent:</p>
+
+<p>Image with 50% opacity:</p>
+<img src="nipa.jpg" alt="nipa" width="170" height="100">
+
+</body>
+</html>
+
+
+
+```
+<hr>
+
+### Z-Index in CSS:
+
+z-index is used to **control layering**, i.e., which element appears on top and which goes underneath.
+
+**Example**
+```json
+.red-box {
+	background-color: red;
+	top: 50px;
+	left: 50px;
+	z-index: 1;
+}
+
+.blue-box {
+	background-color: blue;
+	top: 80px;
+	left: 80px;
+	z-index: 2;
+}
+
+```
+Here, .box2 will appear on top of .box1 because it has a higher z-index.
+
+```json
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .box {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      line-height: 150px;
+    }
+
+    .red-box {
+      background-color: red;
+      top: 50px;
+      left: 50px;
+      z-index: 1;
+    }
+
+    .blue-box {
+      background-color: blue;
+      top: 80px;
+      left: 80px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box red-box">Red Box</div>
+  <div class="box blue-box">Blue Box</div>
+
+</body>
+</html>
+
+```
+
+
+
+
+
+
