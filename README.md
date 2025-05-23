@@ -10,7 +10,7 @@ PHP, standing for "PHP: Hypertext Preprocessor," is a widely-used, open-source s
 
 #### Lesson 1: Introduction to PHP 
 
-What is PHP?
+**What is PHP?**
 	•	PHP stands for “PHP: Hypertext Preprocessor”
 	•	A server-side scripting language used to create dynamic web pages
 	•	PHP files have .php extension and are executed on the server
@@ -22,7 +22,8 @@ Sample Code:
     ?>
 
 <hr>
- Lesson 2: Variables in PHP
+
+#### Lesson 2: Variables in PHP
 
 <?php
 $name = "Nipa";
@@ -30,7 +31,7 @@ $age = 25;
 
 echo "My name is $name and I am $age years old.";
 ?>
-##### Common Variable Types:
+**Common Variable Types:**
    •	string — text (e.g., "Hello")
    
    •	int — numbers (e.g., 25)
@@ -40,7 +41,8 @@ echo "My name is $name and I am $age years old.";
    •	bool — true or false
 
 <hr>
- Lesson 3: Conditional Statements
+
+#### Lesson 3: Conditional Statements
 
       <?php
       $marks = 75;
@@ -65,7 +67,8 @@ Symbol	Meaning
     >=	greater or equal
     <=	less or equal
 <hr>
- Lesson 4: Loops in PHP
+
+#### Lesson 4: Loops in PHP
 
 ###### For Loop:
 
@@ -88,7 +91,8 @@ Symbol	Meaning
           echo "$fruit<br>";
         }
 <hr>
- Lesson 5: Functions in PHP
+
+#### Lesson 5: Functions in PHP
 
 Basic Function:
 
@@ -111,16 +115,17 @@ Function with Return:
               }
            echo add(10, 5);
 <hr>
- Lesson 6: Forms & User Input (GET & POST)
 
-HTML Form (POST):
+#### Lesson 6: Forms & User Input (GET & POST)
+
+**HTML Form (POST):**
 
           <form method="POST" action="submit.php">
               Name: <input type="text" name="username">
               <input type="submit" value="Submit">
            </form>
 
-PHP Script (submit.php):
+**PHP Script (submit.php):**
 
               <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -129,7 +134,8 @@ PHP Script (submit.php):
                   }
               ?>
 <hr>
- Lesson 7: Insert Data into MySQL (Create)
+
+#### Lesson 7: Insert Data into MySQL (Create)
 
    Create Database and Table:
    
@@ -165,7 +171,8 @@ PHP Script (submit.php):
             $conn->close();?>
 
 <hr>
- Lesson 8: Read Data from MySQL
+
+#### Lesson 8: Read Data from MySQL
 
         <?php
            $conn = new mysqli("localhost", "root", "", "my_php_db");
@@ -635,13 +642,79 @@ Shows all users. If a user has no orders, order_date will be NULL.
 ## Task 4:
 
 ### About PHP Function
-#### Five Array Function
+#### Five PHP Array Functions:
+1. array_push()
+2. array_pop()
+3. array_merge()
+4. in_array()
+5. array_keys()
 
+**array_push()**
 
+Adds one or more elements to the end of an array.
+```
+$fruits = ["apple", "banana"];
+array_push($fruits, "orange", "mango");
+print_r($fruits); 
+
+// Output: ["apple", "banana", "orange", "mango"]
+
+```
+
+**array_pop()**
+
+Removes the last element from an array.
+```
+$colors = ["red", "green", "blue"];
+array_pop($colors);
+print_r($colors); 
+// Output: ["red", "green"]
+
+```
+**array_merge()**
+
+Merges two or more arrays into one.
+```
+$a = ["a", "b"];
+$b = ["c", "d"];
+$merged = array_merge($a, $b);
+print_r($merged); 
+// Output: ["a", "b", "c", "d"]
+
+```
+
+**in_array()**
+
+Checks if a value exists in an array.
+```
+$names = ["Ali", "Sara", "John"];
+if (in_array("Sara", $names)) {
+echo "Name found!";
+}
+// Output: Name found!
+
+```
+
+**array_keys()**
+
+Returns all the keys from an array.
+
+```
+$person = ["name" => "Alex", "age" => 30];
+$keys = array_keys($person);
+print_r($keys); 
+// Output: ["name", "age"]
+
+```
 
 <hr>
 
-#### Status Code:
+#### Five PHP String Functions:
+todo
+
+<hr>
+
+## Status Code:
 
 **What is an HTTP Status Code?**
 
