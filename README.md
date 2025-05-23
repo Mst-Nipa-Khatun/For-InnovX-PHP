@@ -551,5 +551,56 @@ Slower Sorting & Filtering: Operations like sorting or filtering require more ti
 
 More Server Load: Higher CPU and memory usage for big queries.
 
+<hr>
+
+####  Primary Key in mySQL:
+
+A primary key uniquely identifies each record in a table. It cannot be NULL and must be unique.
+Each table can have only one primary key.
+
+**Example**
+```
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100)
+);
+```
+Here, id is the primary key. It ensures each user has a unique ID.
+<hr>
+
+#### Composite Key in mySQL:
+
+A composite key is made by combining two or more columns to create a unique identifier.
+Useful when no single column is unique, but the combination is.Used when you want to prevent duplicate combinations of values.
+
+```
+CREATE TABLE order_items (
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    PRIMARY KEY (order_id, product_id)
+);
+```
+Here, the combination of order_id and product_id uniquely identifies each item in the order — but neither column alone is unique.
+<hr>
+
+#### Unique Key (Constraint) in mySQL:
+
+A unique key ensures all values in a column (or group of columns) are different.Unlike primary key, a table can have multiple unique keys. 
+**Can have NULL values** (but only one NULL per unique column in some engines).
+
+Example
+```
+CREATE TABLE employees (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(100) UNIQUE,
+    phone VARCHAR(15) UNIQUE
+);
+```
+Here, both email and phone must be unique, but they are not the primary key.
+
+
+
 
 
