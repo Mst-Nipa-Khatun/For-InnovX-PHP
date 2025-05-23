@@ -673,11 +673,11 @@ e.**5xx**	-- Server Error --	Server failed to fulfill request
 
 **302 = Found (Temporary Redirect)** :Temporarily redirected to another URL.
 
-**304=Not Modified**:Cached version of the resource is still valid; no need to resend it.
+**304=Not Modified** :Cached version of the resource is still valid; no need to resend it.
 
-**400=Bad Request**:The server could not understand the request (invalid syntax).
+**400=Bad Request** :The server could not understand the request (invalid syntax).
 
-**401=Unauthorized** Authentication required or failed.
+**401=Unauthorized** :Authentication required or failed.
 
 **404=Not Found** :The requested resource could not be found.
 
@@ -689,8 +689,97 @@ e.**5xx**	-- Server Error --	Server failed to fulfill request
 
 <hr>
 
+## HTTP Methods
 
+HTTP methods define what kind of action you want to perform on the server (like creating, reading, updating, or deleting data).
 
+Some http methods:
+```
+i.Get
+ii.Post
+iii.Put
+iv.Delete
+```
+<hr>
 
+### 1. POST – (Create Data)
+
+Used to submit data to the server (like form submission, API call to insert).
+
+example
+```
+$userName = $_POST['userName'];
+$email = $_POST['email'];
+
+```
+<hr>
+
+### 2. GET – (Read Data)
+
+Used to retrieve data from the server.
+example:
+```
+$userId = $_GET['userId'];
+echo "User ID is: $userId";
+```
+<hr>
+
+###  3. PUT – (Update Data)
+
+Used to update existing data on the server.
+
+example
+```
+parse_str(file_get_contents("php://input"), $_PUT);
+$userId = $_GET['userId'];
+$newEmail = $_PUT['email'];
+
+```
+PHP does not natively support $_PUT, so you have to read the raw input:
+<hr>
+
+### 4. DELETE – (Delete Data)
+
+Used to delete a resource from the server.
+
+example
+```
+parse_str(file_get_contents("php://input"), $_DELETE);
+$userId = $_GET['userId'];
+```
+<hr>
+
+**Using all in one php file:**
+
+```
+$method = $_SERVER['REQUEST_METHOD'];
+
+switch ($method) {
+    case 'POST':
+        echo "Creating data using POST";
+        break;
+
+    case 'GET':
+        echo "Reading data using GET";
+        break;
+
+    case 'PUT':
+        parse_str(file_get_contents("php://input"), $_PUT);
+        echo "Updating data using PUT";
+        break;
+
+    case 'DELETE':
+        parse_str(file_get_contents("php://input"), $_DELETE);
+        echo "Deleting data using DELETE";
+        break;
+
+    default:
+        echo "Unsupported method!";
+}
+
+```
+<hr>
+
+#   END
 
 
