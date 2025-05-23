@@ -487,3 +487,69 @@ margin-right: 20px;
 margin-bottom: 10px;
 margin-left: 20px;
 ```
+<hr>
+
+## Task 3:
+
+#### Index in mySQL:
+An index in MySQL is a performance optimization tool used to speed up data retrieval from a table.
+
+**Why Use Indexes?**
+```
+ Faster Search
+ Quick Sorting
+ Efficient JOINs
+ Overall Boost
+```
+
+**When to Use Indexes?**
+
+When searching/filtering by a column frequently
+```
+Columns often used in WHERE, JOIN, ORDER BY
+Foreign keys or frequently queried fields
+```
+
+**Create an Index**
+
+First create a table with index value
+```
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    INDEX (email)
+);
+```
+After creating table idex query:
+```
+CREATE INDEX index_email ON users(email);
+```
+
+**With Index:**
+
+Fast Search: MySQL can find data quickly without scanning the entire table.
+
+Better Performance: Especially useful when the table has thousands or millions of rows.
+
+Efficient JOINs: Joining tables becomes much faster when foreign keys are indexed.
+
+Faster Sorting & Grouping: ORDER BY and GROUP BY operations run much faster.
+
+Less Disk Work: Fewer rows need to be read from the disk.
+
+
+**Without Index:**
+
+Slow Searches: MySQL has to scan every row to find matching results.
+
+Poor Performance on Large Tables: Queries get slower as the table grows.
+
+Slow JOINs: Without an index, joins become inefficient and slow.
+
+Slower Sorting & Filtering: Operations like sorting or filtering require more time.
+
+More Server Load: Higher CPU and memory usage for big queries.
+
+
+
