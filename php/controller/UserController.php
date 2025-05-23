@@ -60,6 +60,37 @@ switch ($method) {
         }
         break;
 
+    case 'PUT':
+        parse_str(file_get_contents("php://input"), $putVars);
+
+        if (isset($_GET['userId']) && isset($_FILES['file'])) {
+            $userId = $_GET['userId'];
+            $file = $_FILES['file'];
+
+            $uploadDir = __DIR__ . '/../uploads/';
+            if (!file_exists($uploadDir)) {
+                mkdir($uploadDir);
+            }
+
+            $fileName = time() . "_" . $file['name'];
+            $targetPath = $uploadDir . basename($fileName);
+
+            if (move_uploaded_file($file['tmp_name'], $targetPath)) {
+                $savedDir = "/For-Innovx/php/uploads/" . $fileName;
+                $result = $userService->updateUserImage($userId, $savedDir);
+
+                echo json_encode([
+                    "success" => $result,
+                    "message" => $result ? "Profile image updated!" : "Failed to update image!"
+                ]);
+            } else {
+                echo json_encode(["success" => false, "message" => "Failed to upload new image"]);
+            }
+        } else {
+            echo json_encode(["success" => false, "message" => "Missing userId or image"]);
+        }
+        break;
+
     default:
         echo json_encode(
             ["success" => false, "message" => "Request method not allowed"]
