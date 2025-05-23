@@ -490,6 +490,7 @@ margin-left: 20px;
 <hr>
 
 ## Task 3:
+### About MySQL:
 
 #### Index in mySQL:
 An index in MySQL is a performance optimization tool used to speed up data retrieval from a table.
@@ -629,3 +630,67 @@ FROM users
 LEFT JOIN orders ON users.id = orders.user_id;
 ```
 Shows all users. If a user has no orders, order_date will be NULL.
+<hr>
+
+## Task 4:
+
+### About PHP Function
+#### Five Array Function
+
+
+
+<hr>
+
+#### Status Code:
+
+**What is an HTTP Status Code?**
+
+An HTTP Status Code is a 3-digit number sent by a server in response to a client's request (like a browser or API call).
+
+**Categories of Status Codes:**
+
+a.**1xx**	-- Informational --	Request received, keep going
+
+b.**2xx** --	Success --	Request was successfully processed
+
+c.**3xx** --	Redirection --	Further action needed
+
+d.**4xx**	-- Client Error --	Problem with the request
+
+e.**5xx**	-- Server Error --	Server failed to fulfill request
+
+<hr>
+
+**Some common use http status code:**
+
+**200=OK** :The request succeeded.
+
+**201=Created** :The resource was successfully created (used with POST).
+
+**204=No Content** :Request succeeded but no content to return.
+
+**301=Moved Permanently** :The URL has been changed permanently.
+
+**302 = Found (Temporary Redirect)** :Temporarily redirected to another URL.
+
+**304=Not Modified**:Cached version of the resource is still valid; no need to resend it.
+
+**400=Bad Request**:The server could not understand the request (invalid syntax).
+
+**401=Unauthorized** Authentication required or failed.
+
+**404=Not Found** :The requested resource could not be found.
+
+**405=Method Not Allowed** :HTTP method (GET, POST, etc.) not allowed on this endpoint.
+
+**500=Internal Server Error** :something went wrong on the server.
+
+**502=Bad Gateway** :Bad response from another server	
+
+<hr>
+
+
+
+
+
+
