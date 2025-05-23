@@ -8,7 +8,7 @@ PHP, standing for "PHP: Hypertext Preprocessor," is a widely-used, open-source s
 
 ##### Way out of learn PHP: Step by Step :
 
-##### Lesson 1: Introduction to PHP 
+#### Lesson 1: Introduction to PHP 
 
 What is PHP?
 	•	PHP stands for “PHP: Hypertext Preprocessor”
@@ -22,7 +22,7 @@ Sample Code:
     ?>
 
 <hr>
-##### Lesson 2: Variables in PHP
+ Lesson 2: Variables in PHP
 
 <?php
 $name = "Nipa";
@@ -40,7 +40,7 @@ echo "My name is $name and I am $age years old.";
    •	bool — true or false
 
 <hr>
-#### Lesson 3: Conditional Statements
+ Lesson 3: Conditional Statements
 
       <?php
       $marks = 75;
@@ -65,7 +65,7 @@ Symbol	Meaning
     >=	greater or equal
     <=	less or equal
 <hr>
-#### Lesson 4: Loops in PHP
+ Lesson 4: Loops in PHP
 
 ###### For Loop:
 
@@ -111,7 +111,7 @@ Function with Return:
               }
            echo add(10, 5);
 <hr>
-###### Lesson 6: Forms & User Input (GET & POST)
+ Lesson 6: Forms & User Input (GET & POST)
 
 HTML Form (POST):
 
@@ -129,7 +129,7 @@ PHP Script (submit.php):
                   }
               ?>
 <hr>
-##### Lesson 7: Insert Data into MySQL (Create)
+ Lesson 7: Insert Data into MySQL (Create)
 
    Create Database and Table:
    
@@ -165,7 +165,7 @@ PHP Script (submit.php):
             $conn->close();?>
 
 <hr>
-##### Lesson 8: Read Data from MySQL
+ Lesson 8: Read Data from MySQL
 
         <?php
            $conn = new mysqli("localhost", "root", "", "my_php_db");
