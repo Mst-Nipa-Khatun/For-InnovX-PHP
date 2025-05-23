@@ -88,7 +88,7 @@ Symbol	Meaning
           echo "$fruit<br>";
         }
 <hr>
-###### Lesson 5: Functions in PHP
+ Lesson 5: Functions in PHP
 
 Basic Function:
 
