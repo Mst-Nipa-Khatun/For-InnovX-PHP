@@ -21,7 +21,7 @@ Sample Code:
     echo "Hello, PHP!";
     ?>
 
-
+<hr>
 ##### Lesson 2: Variables in PHP
 
 <?php
@@ -39,6 +39,7 @@ echo "My name is $name and I am $age years old.";
    
    •	bool — true or false
 
+<hr>
 #### Lesson 3: Conditional Statements
 
       <?php
@@ -63,7 +64,7 @@ Symbol	Meaning
     <	less
     >=	greater or equal
     <=	less or equal
-
+<hr>
 #### Lesson 4: Loops in PHP
 
 ###### For Loop:
@@ -86,7 +87,7 @@ Symbol	Meaning
         foreach($fruits as $fruit) {
           echo "$fruit<br>";
         }
-
+<hr>
 ###### Lesson 5: Functions in PHP
 
 Basic Function:
@@ -109,7 +110,7 @@ Function with Return:
                   return $a + $b;
               }
            echo add(10, 5);
-
+<hr>
 ###### Lesson 6: Forms & User Input (GET & POST)
 
 HTML Form (POST):
@@ -127,7 +128,7 @@ PHP Script (submit.php):
                  echo "Your name is: $name";
                   }
               ?>
-
+<hr>
 ##### Lesson 7: Insert Data into MySQL (Create)
 
    Create Database and Table:
@@ -161,8 +162,9 @@ PHP Script (submit.php):
               } else {
                    echo "Error: " . $conn->error;
            }
-            $conn->close();
-        ?>
+            $conn->close();?>
+
+<hr>
 ##### Lesson 8: Read Data from MySQL
 
         <?php
@@ -207,7 +209,7 @@ div {
 In this code, the div will be 50% transparent.
 
 Complete use:
-```json
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -238,7 +240,7 @@ img {
 z-index is used to **control layering**, i.e., which element appears on top and which goes underneath.
 
 **Example**
-```json
+```
 .red-box {
 	background-color: red;
 	top: 50px;
@@ -256,7 +258,7 @@ z-index is used to **control layering**, i.e., which element appears on top and 
 ```
 Here, .box2 will appear on top of .box1 because it has a higher z-index.
 
-```json
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -393,7 +395,7 @@ div {
 }
 ```
 Sets the background color of an element.
-
+<hr>
 **2. background-image**
    
 Sets a background image using a URL.
@@ -402,7 +404,7 @@ div {
   background-image: url('bg.jpg');
 }
 ```
-
+<hr>
 **3. background-repeat**
 
 Controls whether the background image repeats.
@@ -419,7 +421,7 @@ div {
   background-repeat: no-repeat;
 }
 ```
-
+<hr>
 **4. background-attachment**
 
 Specifies whether the background is fixed or scrolls with the page.
@@ -433,6 +435,8 @@ div {
   background-attachment: fixed;
 }
 ```
+<hr>
+
 **5. background-position**
  
 Sets the position of the background image.
@@ -444,6 +448,8 @@ div {
   background-position: center center;
 }
 ```
+<hr>
+
 **6. background (shorthand)**
 
 Combines all background properties in one line:
