@@ -695,10 +695,10 @@ HTTP methods define what kind of action you want to perform on the server (like 
 
 Some http methods:
 ```
-i.Get
-ii.Post
-iii.Put
-iv.Delete
+i.POST
+ii.GET
+iii.PUT
+iv.DELETE
 ```
 <hr>
 
