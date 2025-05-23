@@ -395,7 +395,8 @@ div {
 }
 ```
 Sets the background color of an element.
-<hr>
+<hr>  
+
 **2. background-image**
    
 Sets a background image using a URL.
@@ -405,6 +406,7 @@ div {
 }
 ```
 <hr>
+
 **3. background-repeat**
 
 Controls whether the background image repeats.
@@ -422,6 +424,7 @@ div {
 }
 ```
 <hr>
+
 **4. background-attachment**
 
 Specifies whether the background is fixed or scrolls with the page.
