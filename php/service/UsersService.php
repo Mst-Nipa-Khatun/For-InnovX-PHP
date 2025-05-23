@@ -19,6 +19,7 @@ class UsersService
 
     public function createUser($userName, $email, $password, $education, $age, $picture)
     {
+
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $sql = "INSERT INTO Users (userName,email,password,education,age,picture,status) VALUES (:userName, :email, :password , :education, :age, :picture,1)";
         $executableQuery = $this->conn->prepare($sql);
@@ -48,6 +49,16 @@ class UsersService
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function updateUserImage($userId, $newImagePath)
+    {
+        $sql = "UPDATE Users SET picture = :picture WHERE id = :userId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':picture', $newImagePath);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
 
 
 

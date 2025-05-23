@@ -197,6 +197,8 @@ Function with Return:
 <hr>
 
 ## Task 2:
+<hr>
+
 ### About CSS:
 
 #### Opacity:
@@ -497,6 +499,8 @@ margin-left: 20px;
 <hr>
 
 ## Task 3:
+<hr>
+
 ### About MySQL:
 
 #### Index in mySQL:
@@ -643,7 +647,7 @@ Shows all users. If a user has no orders, order_date will be NULL.
 
 ### About PHP Function
 
-#### Five PHP Array Functions:
+### Five PHP Array Functions:
 1. array_push()
 2. array_pop()
 3. array_merge()
@@ -710,7 +714,7 @@ print_r($keys);
 
 <hr>
 
-#### Five PHP String Functions:
+### Five PHP String Functions:
 
 1. strlen()
 2. strtoupper() / strtolower()

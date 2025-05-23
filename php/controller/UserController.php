@@ -8,6 +8,10 @@ header("Content-Type: application/json");
 $userService = new UsersService();
 $method = $_SERVER['REQUEST_METHOD'];
 
+if ($method === 'POST' && isset($_POST['_method']) && $_POST['_method'] === 'PUT') {
+    $method = 'PUT';
+}
+
 switch ($method) {
     case 'POST':
         if (
@@ -23,7 +27,7 @@ switch ($method) {
 
             $uploadDir = __DIR__ . '/../uploads/';
             if (!file_exists($uploadDir)) {
-                mkdir($uploadDir);
+                mkdir($uploadDir, 0777, true);
             }
 
             $fileName = time() . "_" . $file['name'];
@@ -42,13 +46,14 @@ switch ($method) {
             echo json_encode(["success" => false, "message" => "Missing parameters or file"]);
         }
         break;
+
     case 'GET':
         $result = $userService->getAllUsers();
         $resultCount = count($result);
         if ($resultCount > 0) {
             echo json_encode([
                 "success" => true,
-                "message" => "Successful retrieve all users",
+                "message" => "Successfully retrieved all users",
                 "users" => $result
             ]);
         } else {
@@ -61,15 +66,13 @@ switch ($method) {
         break;
 
     case 'PUT':
-        parse_str(file_get_contents("php://input"), $putVars);
+        $userId = isset($_GET['userId']) ? $_GET['userId'] : (isset($_POST['userId']) ? $_POST['userId'] : null);
+        $file = isset($_FILES['file']) ? $_FILES['file'] : null;
 
-        if (isset($_GET['userId']) && isset($_FILES['file'])) {
-            $userId = $_GET['userId'];
-            $file = $_FILES['file'];
-
+        if ($userId && $file) {
             $uploadDir = __DIR__ . '/../uploads/';
             if (!file_exists($uploadDir)) {
-                mkdir($uploadDir);
+                mkdir($uploadDir, 0777, true);
             }
 
             $fileName = time() . "_" . $file['name'];
@@ -87,16 +90,13 @@ switch ($method) {
                 echo json_encode(["success" => false, "message" => "Failed to upload new image"]);
             }
         } else {
-            echo json_encode(["success" => false, "message" => "Missing userId or image"]);
+            echo json_encode(["success" => false, "message" => "Missing userId or image file"]);
         }
         break;
 
     default:
-        echo json_encode(
-            ["success" => false, "message" => "Request method not allowed"]
-        );
-
+        echo json_encode([
+            "success" => false,
+            "message" => "Request method not allowed"
+        ]);
 }
-
-
-
