@@ -370,4 +370,85 @@ div.d {
   text-align: justify;
 }
 ```
+<hr>
 
+### Background in CSS:
+Controls background color, images, position, repeat, etc.
+
+Values
+```
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+background (shorthand property)
+```
+
+**1. background-color:**
+```
+div {
+  background-color: lightblue;
+}
+```
+Sets the background color of an element.
+
+**2. background-image**
+   
+Sets a background image using a URL.
+```
+div {
+  background-image: url('bg.jpg');
+}
+```
+
+**3. background-repeat**
+
+Controls whether the background image repeats.
+
+repeat (default)
+
+no-repeat
+
+repeat-x, repeat-y
+
+```
+div {
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+}
+```
+
+**4. background-attachment**
+
+Specifies whether the background is fixed or scrolls with the page.
+
+i.Roll (default)
+
+ii.fixed
+```
+div {
+  background-image: url('bg.jpg');
+  background-attachment: fixed;
+}
+```
+**5. background-position**
+ 
+Sets the position of the background image.
+
+Examples: left top, center center, right bottom.
+```
+div {
+  background-image: url('bg.jpg');
+  background-position: center center;
+}
+```
+**6. background (shorthand)**
+
+Combines all background properties in one line:
+```
+background: [color] [image] [repeat] [attachment] [position];
+div {
+  background: lightblue url('bg.jpg') no-repeat fixed center;
+}
+```
