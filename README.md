@@ -295,9 +295,79 @@ Here, .box2 will appear on top of .box1 because it has a higher z-index.
 </html>
 
 ```
+<hr>
 
+### Clear in CSS
 
+Used to make sure an element doesn’t sit next to floating elements.
 
+**Values**:
 
+left → avoids left floats
 
+right → avoids right floats
+
+both → clears both sides.
+
+Example:
+```
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  float: left;
+}
+
+p.clear {
+  clear: left;
+}
+</style>
+</head>
+<body>
+
+<h1>The clear Property</h1>
+
+<img src="w3css.gif" width="100" height="132">
+
+<p class="clear">This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
+<p><strong>Remove the "clear" class to see the effect.</strong></p>
+
+</body>
+</html>
+```
+<hr>
+
+###  Align (text-align) in CSS:
+Controls the horizontal alignment of text or inline elements.
+
+Values:
+
+left → align text to the left
+```
+div.b {
+  text-align: left;
+}
+
+```
+right → align to the right
+```
+div.c {
+  text-align: right;
+}
+```
+center → center alignment.
+```
+div.a {
+  text-align: center;
+}
+
+```
+
+justify → space out text evenly across width
+```
+div.d {
+  text-align: justify;
+}
+```
 
