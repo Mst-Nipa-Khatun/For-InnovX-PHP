@@ -375,6 +375,7 @@ div.d {
 ### Background in CSS:
 Controls background color, images, position, repeat, etc.
 
+
 Values
 ```
 background-color
@@ -451,4 +452,29 @@ background: [color] [image] [repeat] [attachment] [position];
 div {
   background: lightblue url('bg.jpg') no-repeat fixed center;
 }
+```
+<hr>
+
+### Padding in CSS:
+
+Defines the space inside the element, between the content and its border.(Inner Space)
+Values:
+```
+padding-top: 10px;
+padding-right: 15px;
+padding-bottom: 10px;
+padding-left: 15px;
+```
+<hr>
+
+### Margin in CSS:
+
+Defines the space outside the element, separating it from others.(Outer Sapce)
+
+Values
+```
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 10px;
+margin-left: 20px;
 ```
