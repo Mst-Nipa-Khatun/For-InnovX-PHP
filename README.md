@@ -642,6 +642,7 @@ Shows all users. If a user has no orders, order_date will be NULL.
 ## Task 4:
 
 ### About PHP Function
+
 #### Five PHP Array Functions:
 1. array_push()
 2. array_pop()
@@ -710,7 +711,53 @@ print_r($keys);
 <hr>
 
 #### Five PHP String Functions:
-todo
+
+1. strlen()
+2. strtoupper() / strtolower()
+3. substr()
+4. str_replace()
+5. strpos()
+
+**strlen()**
+
+Returns the length of a string.
+
+```
+echo strlen("Hello PHP");
+// Output: 9
+
+```
+**strtoupper() / strtolower()**
+
+Converts string to uppercase or lowercase.
+```
+echo strtoupper("php"); // Output: PHP
+echo strtolower("HELLO"); // Output: hello
+
+```
+**substr()**
+
+Returns a part (substring) of a string.
+```
+echo substr("Hello World", 0, 5); 
+// Output: Hello
+
+```
+**str_replace()**
+
+Replaces all occurrences of a string with another string.
+```
+echo str_replace("World", "PHP", "Hello World");
+// Output: Hello PHP
+
+```
+**strpos()**
+
+Finds the position of the first occurrence of a substring.
+```
+echo strpos("I love PHP", "PHP"); 
+// Output: 7
+```
 
 <hr>
 
