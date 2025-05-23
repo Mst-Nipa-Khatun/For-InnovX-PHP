@@ -600,7 +600,32 @@ CREATE TABLE employees (
 ```
 Here, both email and phone must be unique, but they are not the primary key.
 
+<hr>
 
+#### INNER JOIN(JOIN) in mySQL:
 
+Returns only matching rows from both tables. If there's no match, that row is not shown in the result.
 
+Example:
+When two table are present users and order ,then Only users who have at least one order will appear.
+```
+SELECT users.name, orders.order_date
+FROM users
+JOIN orders ON users.id = orders.user_id;
+```
+<hr>
 
+#### LEFT JOIN (or LEFT OUTER JOIN) in mySQL:
+
+Returns all rows from the left table, and the matching rows from the right table.
+
+Example:
+
+You want to list all users, even those who have no orders yet.
+
+```
+SELECT users.name, orders.order_date
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id;
+```
+Shows all users. If a user has no orders, order_date will be NULL.
