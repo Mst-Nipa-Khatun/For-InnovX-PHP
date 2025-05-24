@@ -8,8 +8,8 @@ use PDOException;
 
 class Database
 {
-    private static $instance = null;
-    private static $lock = false; // Prevent race conditions
+    private static $instance = null;//same instance return korar jonno static
+    private static $lock = false; // Prevent race conditions eksathe onek db create hote pare tai false kore dichi hobe na
     private $conn;
     private $host = "localhost";
     private $user = "nipa";

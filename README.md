@@ -440,7 +440,7 @@ div {
 
 Specifies whether the background is fixed or scrolls with the page.
 
-i.Roll (default)
+i.Scroll (default)
 
 ii.fixed
 ```
@@ -478,6 +478,7 @@ div {
 ### Padding in CSS:
 
 Defines the space inside the element, between the content and its border.(Inner Space)
+
 Values:
 ```
 padding-top: 10px;
