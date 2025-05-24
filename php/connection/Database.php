@@ -14,7 +14,7 @@ class Database
     private $host = "localhost";
     private $user = "nipa";
     private $pass = "nipa";
-    private $dbname = "innovex_php";
+    private $dbname = "innovex_php"; //db name
 
     public function __construct()
     {
