@@ -35,7 +35,7 @@ if ($userId !== null && is_numeric($userId)) { //jodi userId not null hoy and nu
                     <?php if ($userData): ?>  <!--userData e kisu asekina jodi thake then next-->
                         <div class="row">
                             <div class="col-md-4 text-center">
-                                <img src="<?= $userData['picture'] ?>" <!--user Profile e user picture dekhnor jonno-->
+                                <img src="<?= $userData['picture'] ?>"
                                      id="profileImage"
                                      alt="Profile Picture"
                                      class="img-fluid rounded-circle mb-3"
@@ -59,6 +59,7 @@ if ($userId !== null && is_numeric($userId)) { //jodi userId not null hoy and nu
                     <?php else: ?>
                         <div class="alert alert-danger">No user found.</div>  <!--othewise no user found dekhabe-->
                     <?php endif; ?>
+                    <a href="login.html" class="btn btn-danger mt-3" style="float: right">Logout</a>
                 </div>
             </div>
         </div>
