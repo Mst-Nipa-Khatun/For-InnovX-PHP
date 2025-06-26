@@ -1,7 +1,7 @@
 # For-Innovx
 This is my login url:http://localhost/For-Innovx/php/view/html/login.html
 
-## Task 1:
+## Step 1:
 
 ### PHP BrainStorm 
 
@@ -198,7 +198,7 @@ Function with Return:
 
 <hr>
 
-## Task 2:
+## Step 2:
 <hr>
 
 ### About CSS:
@@ -501,7 +501,7 @@ margin-left: 20px;
 ```
 <hr>
 
-## Task 3:
+## Step 3:
 <hr>
 
 ### About MySQL:
@@ -646,7 +646,7 @@ LEFT JOIN orders ON users.id = orders.user_id;
 Shows all users. If a user has no orders, order_date will be NULL.
 <hr>
 
-## Task 4:
+## Step 4:
 
 ### About PHP Function
 
